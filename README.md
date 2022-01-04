@@ -26,4 +26,8 @@ ___Below are examples showcasing the project!___
 
 ![Paused](https://user-images.githubusercontent.com/96930484/148027634-402f5073-e884-43de-a321-ca77c4c679e6.jpg)
 ![Retry](https://user-images.githubusercontent.com/96930484/148027684-b3847d3d-6e65-44a0-8145-18d66bfa7620.jpg)
+<br>
+### Future Plans ###
+🌟 There are no plans to update this project!
+<br> 🌟This is but a stepping stone towards cooler things!
 
