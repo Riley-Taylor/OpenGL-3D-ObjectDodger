@@ -1,5 +1,5 @@
-//Riley Taylor CSCI4550 Compass Animation assignment!
-//This is very rough. I feel like I could do better, but might need to really look into examples of programming to freshen up using functions for things.
+//Riley Taylor
+//I am proud of this!
 
 #include <Windows.h>
 #include <gl/GL.h>
@@ -15,18 +15,15 @@
 #define MSEC_PER_FRAME 10 //1000/10 100FPS
 #define PI 3.14159265
 #define N 40.0 // Number of vertices on the boundary of the disc.
-int Left = 0;
 int Right = 0;
-double rot = 0;
-int rot2 = -rot + 10;
-bool pauseMotion = false;
-int switchView = 0;
-bool PauseMenu = false;
-int randomX = 0;
-int randomZ = 0;
+double rot = 0; //short for rotation... originally for a spinning cirlce, this now represents the variable that increases in the timerFunc.
+bool pauseMotion = false; //is the game currently "in motion"
+bool PauseMenu = false; //bool that controls if pause menu is displayed
+int randomX = 0; //random X value for Cubes(objects)
+int randomZ = 0; //random Z value for cubes(objects
 float RCol1= 0; //random color 1-3
-float RCol2=0;
-float RCol3=0;
+float RCol2=0; //vvvvv
+float RCol3=0; //vvvvv
 int CAROBJECTS = 20; //number of objects.
 bool Collision = false;
 int Score = 0; //user score
@@ -39,7 +36,7 @@ float d2r(int degree) { return ((PI / 180.0) * degree); } //degree to radians
 class RandomCube { //there should be 20. sigh OOP.. old friend.
 public:
 	float xValue;
-	float yValue;
+	float yValue; //arguably don't need this but maybe the road will change in the future?
 	float zValue;
 	float color1; //maybe random color cubes? why not.
 	float color2; //maybe random color cubes? why not.
@@ -49,7 +46,7 @@ public:
 
 public:
 	RandomCube() {};
-	 //just to create cube.
+	 //just to create cube. yanno.. constructor
 
 
 
@@ -63,8 +60,8 @@ void constructCube() {
 		RCol1 =(float) rand() / RAND_MAX; //hahah i got it again.
 		RCol2 = (float) rand() / RAND_MAX; //I am a genius!
 		RCol3 = (float) rand() / RAND_MAX;
-		randomX = (rand() % 12) - 6;
-		randomZ = (rand() % 1000);
+		randomX = (rand() % 12) - 6; //keeps the cubes on the road between -6 & 6
+		randomZ = (rand() % 1000); //places the cubes on the road and not before or after.
 		CubeArray[i].yValue =2;
 		CubeArray[i].xValue = -randomX;
 		CubeArray[i].zValue = -randomZ;
@@ -72,8 +69,8 @@ void constructCube() {
 		CubeArray[i].color2 = RCol2;
 		CubeArray[i].color3 = RCol3;
 
-		std::cout << CubeArray[i].xValue << std::endl;
-		std::cout << CubeArray[i].zValue << std::endl;
+		std::cout << CubeArray[i].xValue << std::endl; //originally for error testing
+		std::cout << CubeArray[i].zValue << std::endl; //vvv left in
 
 	}
 }
@@ -84,7 +81,7 @@ void writeBitmapString(void* font, const char* string) {
 		glutBitmapCharacter(font, string[i]);
 }
 
-void drawRoad2(void)
+void drawRoad2(void) //draws the outline of the road.
 {
 
 	glColor3f(0, 0, 0);
@@ -97,7 +94,7 @@ void drawRoad2(void)
 
 }
 
-void drawRoadLines()
+void drawRoadLines() //draws the median.
 {
 
 	glColor3f(1, 1, 0);
@@ -125,7 +122,7 @@ void drawCar() {
 	glColor3f(.9, 0.9, .9); glutSolidCube(4);
 	glPopMatrix();
 }
-void drawMenu() {
+void drawMenu() { //The pause menu
 	glColor3f(0, 0, 1);
 	glBegin(GL_TRIANGLE_STRIP);
 	glVertex3f(-5, 7, -rot + 4.9);
@@ -136,7 +133,7 @@ void drawMenu() {
 	glEnd();
 	
 }
-void drawCollisonScreen() //this just draws the screen.
+void drawCollisonScreen() //this just draws the  Losing screen.
 {
 	glColor3f(0, 0, 0);
 	glBegin(GL_POLYGON);
@@ -156,7 +153,7 @@ void drawCollisonScreen() //this just draws the screen.
 
 }
 
-void drawScore()
+void drawScore() 
 {
 
 	glColor3f(0, 0, 0);
@@ -184,7 +181,7 @@ void drawRandomObjects() {
 	}
 }
 
-void CheckCollision()
+void CheckCollision() //checking collision every frame 
 {
 	for (int i = 0; i < CAROBJECTS; i++)
 	{ //This is gross but will work
@@ -202,7 +199,7 @@ void CheckCollision()
 	}
 }
 
-void drawFlatGrass() {
+void drawFlatGrass() { //scenery
 	glColor3f(0, 1, 0);
 	glBegin(GL_POLYGON);
 	glVertex3f(-500,-.01,0);
@@ -213,7 +210,7 @@ void drawFlatGrass() {
 
 }
 
-void DrawBuilding()
+void DrawBuilding() //scenery
 {
 	glPushMatrix();
 	glColor3f(0, .2, .7);
