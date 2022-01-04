@@ -1,6 +1,6 @@
 # OpenGL-3D-ObjectDodger
 
- **### Project for my Computer Graphics course! ###**
+ *Project for my Computer Graphics course with Dr. Dinc!*
 ### Overview ###
 💠 The car drives down a straight road, while random objects are intialized along the road and the player must avoid the objects.
 <br> 💠 If object collision is detected, the game stops and prompts the user to retry. 
@@ -17,5 +17,13 @@
 * The application prompts the user to retry if a collision is detected.
 * The user can navigate freely between lanes.
 * Constraints are set to stop the user from driving off screen/off track.
+<br>
+
+___Below are examples showcasing the project!___
 
 ![2022-01-04-01-16-21_Trim](https://user-images.githubusercontent.com/96930484/148026222-32ee468c-e17b-4d9f-8d16-19d48dcf2cad.gif)
+
+
+![Paused](https://user-images.githubusercontent.com/96930484/148027634-402f5073-e884-43de-a321-ca77c4c679e6.jpg)
+![Retry](https://user-images.githubusercontent.com/96930484/148027684-b3847d3d-6e65-44a0-8145-18d66bfa7620.jpg)
+
