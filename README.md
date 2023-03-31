@@ -13,7 +13,7 @@
 💠 SPACE pauses the game.
 #### Features ####
 * The objects are generated randomly, and are different on each playthrough.
-* The score in the top right increases by 1 for every obstacle passed.
+* The score in the top left increases by 1 for every obstacle passed.
 * The application prompts the user to retry if a collision is detected.
 * The user can navigate freely between lanes.
 * Constraints are set to stop the user from driving off screen/off track.
